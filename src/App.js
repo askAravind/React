@@ -5,7 +5,7 @@ import Header from './components/Header';
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import {BrowserRouter as Router} from 'react-router-dom'
-import BodyRoute from './components/BodyRoute';
+import Body from './components/Body';
 import UserContextProvider from './context api/UserContext';
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
     <Router>
     <div className="App">
       <Header />
-      <BodyRoute />
+      <Body />
     </div>
     </Router>
     </UserContextProvider>
