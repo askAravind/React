@@ -12,6 +12,7 @@ const UserProfile = (props) => {
     const [email,setEmail] = useState('')
     const [userType, setUserType] = useState('')
     const [isNewUser,setIsNewUser] = useState('')
+    const [isSubmitted, setIsSubmitted] = useState('')
 
     
     const data = userData.filter(element => element.id === id)
@@ -19,14 +20,23 @@ const UserProfile = (props) => {
     const handleSubmit = (e) => {
         
         e.preventDefault()
-        const formData = {
-            firstName:firstname,
-            lastName:lastname,
-            email:email,
-            typeOfUser: userType,
-            isNewUser: isNewUser
+        
+        // if all data is filled out form data will be displayed in the console.
+
+        if(firstname !== '' && lastname!==''&&email!==''&&userType!==''&&isNewUser!==''){
+            const formData = {
+                firstName:firstname,
+                lastName:lastname,
+                email:email,
+                typeOfUser: userType,
+                isNewUser: isNewUser
+            }
+            setIsSubmitted(true)
+            console.log("form submit Data :",formData)
         }
-        console.log("form submit Data :",formData)
+        else{
+            setIsSubmitted(false)
+        }
     }
     return (
         <div>
@@ -105,6 +115,12 @@ const UserProfile = (props) => {
                             </div>
                             
                         </div>
+                        {isSubmitted === false?
+                        <div className="row">
+                            <div className="col-md-6">
+                                <p>Please fill in all the fields!</p>
+                            </div>
+                        </div>:null}
                     </div>
                 </div>
                 </form>
