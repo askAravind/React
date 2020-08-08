@@ -4,17 +4,9 @@ import React, { useContext} from 'react'
 import { UserContext } from '../context api/UserContext'
 
 const UserList = (props) => {
-    // const [users, setUsers] = useState([{}])
+    
     const context = useContext(UserContext)
 
-    // useEffect(()=>{
-    //     axios.get('https://reqres.in/api/users?page=1').then(res => {
-    //         setUsers(res.data.data)
-            
-            
-    //     })
-    // },[])
-    // console.log(" context" , context)
     return (
         <div>
             

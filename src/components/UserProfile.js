@@ -11,7 +11,7 @@ const UserProfile = (props) => {
     const [lastname,setLastName] = useState('')
     const [email,setEmail] = useState('')
     const [userType, setUserType] = useState('')
-    const [isNewUser,setIsNewUser] = useState('')
+    const [isNewUser,setIsNewUser] = useState(false)
     const [isSubmitted, setIsSubmitted] = useState('')
 
     
@@ -55,7 +55,7 @@ const UserProfile = (props) => {
                 <div className="user-form">
                     <div className="container">
                         <div className="row">
-                            <div className="col-md-4">
+                            <div className="col-sm-4">
                                 <div className="form-group">
                                     <label htmlFor="input-firstname">First Name</label>
                                     <input className="form-control" 
@@ -65,7 +65,7 @@ const UserProfile = (props) => {
                                     onChange={(e)=> setFirstName(e.target.value)}></input>
                                 </div>
                             </div>
-                            <div className="col-md-4">
+                            <div className="col-sm-4">
                                 <div className="form-group">
                                     <label htmlFor="input-lastname">Last Name</label>
                                     <input className="form-control" 
@@ -75,7 +75,7 @@ const UserProfile = (props) => {
                                     onChange={(e)=> setLastName(e.target.value)}></input>
                                 </div>
                             </div>
-                            <div className="col-md-4">
+                            <div className="col-sm-4">
                                 <div className="form-group">
                                     <label htmlFor="input-email">Email</label>
                                     <input className="form-control" 
@@ -88,18 +88,19 @@ const UserProfile = (props) => {
                             
                         </div>
                         <div className="row">
-                            <div className="col-md-6">
+                            <div className="col-sm-6">
                                 User Type
                                 <select className="form-control form-control-sm"
                                 value={userType} onChange={(e)=>setUserType(e.target.value)}>
+                                    <option defaultValue >--Select a type--</option>
                                     <option>Regular User</option>
                                     <option>Special User</option>
                                 </select>
                             </div>
 
-                            <div className="col-md-6">
+                            <div className="col-sm-6">
                             <div className="form-check">
-                                <h5>Gender</h5>
+                                <p>New User</p>
                                  <input className="form-check-input" 
                                  type="checkbox"  id="defaultCheck1" 
                                  value={isNewUser} onChange={(e)=>setIsNewUser(e.target.checked)} />
@@ -110,28 +111,24 @@ const UserProfile = (props) => {
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col-md-4 mt-4">
+                            <div className="col-sm-4 mt-4">
                             <button type="submit" className="btn btn-primary">Submit</button>
                             </div>
                             
                         </div>
                         {isSubmitted === false?
                         <div className="row">
-                            <div className="col-md-6">
+                            <div className="col-sm-6">
                                 <p>Please fill in all the fields!</p>
                             </div>
-                        </div>:null}
+                        </div>:
+                        null
+                        }
                     </div>
                 </div>
                 </form>
                 </>
-            
-            
-            
-           
-           
-                
-                 
+                  
         </div>
     )
 }

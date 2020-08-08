@@ -1,16 +1,23 @@
 .App {
   width: auto;
   min-height: 100vh;
-  background-color: rgb(145, 144, 142);
+  background-color: rgb(202, 201, 199);
 }
 
 /* Header Styles */
+
+.nav-element{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
 
 .nav-header{
   display: flex;
   justify-content: space-between;
   padding: 0 20px;
-  color:black;
+  background-color: blue;
+  color:rgb(14, 13, 13);
   width: auto;
   height: 75px;
   background-color: white;
@@ -20,15 +27,31 @@
 /* body component styles */
 
 .page-title{
-  padding-top: 20px ;
+  padding-top: 15px ;
+  margin:10px 0;
+}
+
+.about-navlink{
+  margin-right: 20px;
+}
+
+.active{
+  color: blue;
 }
 
 .tabs{
   font-size: large;
   color: aliceblue;
-  margin: 20px 0;
+  margin: 30px 0;
   background-color: rgb(104, 102, 102);
   padding: 5px;
   border: 0.5px solid;
 }
 
+/* User profile styles */
+.user-form{
+  margin:30px 0;
+}
+
+.nav-item{
+  margin-left: auto;}
